@@ -1,0 +1,152 @@
+/* -------------------- */
+/* --- Footer Base --- */
+/* -------------------- */
+.footer {
+  background-color: var(--color-primary-green);
+  color: var(--color-neutral-light);
+  padding: var(--space-6) 0 var(--space-3);
+  margin-top: auto; /* Pushes footer to the bottom */
+}
+
+.footer a {
+  color: var(--color-neutral-gray);
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* -------------------- */
+/* --- Newsletter --- */
+/* -------------------- */
+.footer-newsletter {
+  text-align: center;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-newsletter h3 {
+  font-family: var(--font-family-serif-headings);
+  font-size: 1.75rem;
+  margin-bottom: var(--space-1);
+}
+
+.newsletter-form {
+  margin-top: var(--space-2);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form input {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-neutral-gray);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-text-charcoal);
+}
+
+.newsletter-form button {
+  padding: var(--space-1) var(--space-3);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-accent-terracotta);
+  color: var(--color-white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  opacity: 0.9;
+}
+
+
+/* -------------------- */
+/* --- Footer Main --- */
+/* -------------------- */
+.footer-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.footer-section h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: var(--space-2);
+  color: var(--color-white);
+}
+
+.footer-section.about p {
+  line-height: 1.6;
+  color: var(--color-neutral-gray);
+}
+
+.footer-logo {
+  font-family: var(--font-family-serif-headings);
+}
+
+.footer-section.links ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+/* -------------------- */
+/* --- Footer Bottom --- */
+/* -------------------- */
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+  color: var(--color-neutral-gray);
+}
+
+/* -------------------- */
+/* --- Responsiveness --- */
+/* -------------------- */
+@media (max-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    text-align: center;
+  }
+  .footer-section.links ul {
+    align-items: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .newsletter-form button {
+    margin-top: var(--space-1);
+  }
+}

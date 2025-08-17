@@ -1,0 +1,67 @@
+.about-page {
+  padding-bottom: var(--space-6);
+}
+
+.about-hero {
+  text-align: center;
+  padding: var(--space-5) 0;
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-5);
+}
+
+.about-hero h1 {
+  font-family: var(--font-family-serif-headings);
+  font-size: 3rem;
+  color: var(--color-primary-green);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: var(--space-5);
+}
+
+.content-section h2 {
+  font-family: var(--font-family-serif-headings);
+  font-size: 2rem;
+  color: var(--color-primary-green);
+  margin-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-accent-terracotta);
+  padding-bottom: var(--space-1);
+  display: inline-block;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-2);
+}
+
+.sustainability ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sustainability li {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.badge {
+  background-color: var(--color-primary-green);
+  color: white;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  font-weight: bold;
+}

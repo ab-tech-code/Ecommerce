@@ -1,0 +1,92 @@
+.checkout-page h1, .checkout-empty h1 {
+  text-align: center;
+  font-family: var(--font-family-serif-headings);
+  margin-bottom: var(--space-4);
+}
+
+.checkout-empty {
+  text-align: center;
+  padding: var(--space-6) 0;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 992px) {
+  .checkout-layout {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+.shipping-details h2, .checkout-summary h2 {
+  font-family: var(--font-family-serif-headings);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-gray);
+  padding-bottom: var(--space-2);
+}
+
+.checkout-summary {
+  background-color: var(--color-neutral-light);
+  padding: var(--space-3);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-neutral-gray);
+}
+
+.order-items-summary {
+  margin-bottom: var(--space-3);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.summary-item span:first-child {
+  color: #333;
+}
+
+.summary-item span:last-child {
+  font-weight: bold;
+}
+
+.payment-method {
+  margin-top: var(--space-4);
+}
+
+.payment-method h3 {
+  margin-bottom: var(--space-2);
+}
+
+.payment-method label {
+  display: block;
+  padding: var(--space-2);
+  border: 1px solid var(--color-neutral-gray);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--space-2);
+  cursor: pointer;
+}
+
+.payment-method label:has(input:checked) {
+    background-color: var(--color-primary-green);
+    border-color: var(--color-primary-green);
+    color: white;
+}
+
+.payment-method input {
+  margin-right: var(--space-1);
+}
+
+.place-order-btn {
+  width: 100%;
+  margin-top: var(--space-3);
+}
+
+.checkout-page .error-message {
+    text-align: center;
+    margin-bottom: var(--space-2);
+}

@@ -1,0 +1,17 @@
+.page-title {
+  text-align: center;
+  font-family: var(--font-family-serif-headings);
+  font-size: 2.5rem;
+  margin-bottom: var(--space-3);
+}
+
+/* For larger screens, a sidebar layout could be used. */
+/* For now, we'll keep it simple with filters on top. */
+
+.products-main-content {
+    margin-top: var(--space-3);
+}
+
+.pagination-container {
+    margin-top: var(--space-4);
+}

@@ -1,0 +1,53 @@
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: flex-end;
+  padding: var(--space-2);
+  background-color: var(--color-neutral-light);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--color-neutral-gray);
+}
+
+.filter-group {
+  flex: 1 1 180px; /* Flex-grow, flex-shrink, flex-basis */
+}
+
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: var(--space-1);
+}
+
+.filter-input,
+.filter-select {
+  width: 100%;
+  padding: var(--space-1);
+  border: 1px solid var(--color-neutral-gray);
+  border-radius: var(--border-radius-sm);
+  font-size: 1rem;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: var(--color-primary-green);
+}
+
+.reset-filters-btn {
+  background-color: var(--color-accent-terracotta);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  height: fit-content; /* Align with the bottom of other controls */
+}
+
+.reset-filters-btn:hover {
+  background-color: #b34b4b;
+}

@@ -1,0 +1,136 @@
+/* -------------------- */
+/* --- CSS Resets --- */
+/* -------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-neutral-light);
+  color: var(--color-text-charcoal);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* -------------------- */
+/* --- Design System --- */
+/* -------------------- */
+
+:root {
+  /* Color Palette */
+  --color-primary-green: #2E4F4F;
+  --color-accent-terracotta: #C85C5C;
+  --color-neutral-light: #F7F7F7;
+  --color-neutral-gray: #EAEAEA;
+  --color-text-charcoal: #333333;
+  --color-white: #FFFFFF;
+
+  /* Typography */
+  --font-family-sans: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  --font-family-serif-headings: 'Georgia', 'Times New Roman', serif; /* Optional for headings */
+
+  /* Spacing (8px scale) */
+  --space-1: 0.5rem; /* 8px */
+  --space-2: 1rem;   /* 16px */
+  --space-3: 1.5rem; /* 24px */
+  --space-4: 2rem;   /* 32px */
+  --space-5: 2.5rem; /* 40px */
+  --space-6: 3rem;   /* 48px */
+
+  /* Layout */
+  --container-width: 1200px;
+  --container-padding: var(--space-2);
+
+  /* Borders & Shadows */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------- */
+/* --- Global Styles --- */
+/* -------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+a {
+  color: var(--color-primary-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* -------------------- */
+/* --- Page Sections --- */
+/* -------------------- */
+.section-padding {
+  padding: var(--space-6) 0;
+}
+
+.section-title {
+  text-align: center;
+  font-family: var(--font-family-serif-headings);
+  font-size: 2.25rem;
+  margin-bottom: var(--space-4);
+}
+
+/* -------------------- */
+/* --- Grids --- */
+/* -------------------- */
+.category-grid,
+.product-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* Tablet */
+@media (min-width: 576px) {
+  .category-grid,
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .category-grid,
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

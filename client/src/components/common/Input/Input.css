@@ -1,0 +1,42 @@
+.form-group {
+  margin-bottom: var(--space-2);
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: var(--space-1);
+  color: var(--color-text-charcoal);
+}
+
+.required-asterisk {
+  color: var(--color-accent-terracotta);
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: var(--space-1) var(--space-2);
+  border: 2px solid var(--color-neutral-gray);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-white);
+  color: var(--color-text-charcoal);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-primary-green);
+}
+
+/* --- Error State --- */
+.form-group.has-error .form-control {
+  border-color: var(--color-accent-terracotta);
+}
+
+.error-message {
+  color: var(--color-accent-terracotta);
+  font-size: 0.9rem;
+  margin-top: var(--space-1);
+}

@@ -1,0 +1,31 @@
+.value-props {
+  background-color: var(--color-neutral-gray);
+}
+
+/* The props-grid is the same as the category/product grid, */
+/* but we can add specific styles if needed. */
+/* For now, the global .props-grid in index.css will handle the layout. */
+
+.prop-item {
+  text-align: center;
+  padding: var(--space-3);
+}
+
+.prop-icon {
+  font-size: 3rem; /* 48px */
+  margin-bottom: var(--space-2);
+  line-height: 1;
+}
+
+.prop-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: var(--space-1);
+  color: var(--color-primary-green);
+}
+
+.prop-description {
+  font-size: 1rem;
+  color: var(--color-text-charcoal);
+  line-height: 1.6;
+}
