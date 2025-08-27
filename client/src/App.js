@@ -18,6 +18,12 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
+import ProductManagementPage from './pages/ProductManagementPage';
+import OrderManagementPage from './pages/OrderManagementPage';
+import BlogManagementPage from './pages/BlogManagementPage';
+import AdminRoute from './components/common/AdminRoute';
 
 /**
  * The main application component.
@@ -48,6 +54,15 @@ function App() {
             {/* Blog Pages */}
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogDetailPage />} />
+
+            {/* Admin Pages */}
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route path="/admin" element={<AdminRoute />}>
+              <Route path="dashboard" element={<AdminDashboardPage />} />
+              <Route path="products" element={<ProductManagementPage />} />
+              <Route path="orders" element={<OrderManagementPage />} />
+              <Route path="blog" element={<BlogManagementPage />} />
+            </Route>
 
             {/* 404 Not Found Page */}
             <Route path="*" element={<NotFoundPage />} />

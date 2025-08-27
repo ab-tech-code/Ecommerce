@@ -90,6 +90,71 @@ export const initializePaystack = async (orderId) => {
     }
 };
 
+// --- Auth Functions ---
+export const login = async (credentials) => {
+    const url = `${API_BASE_URL}/auth/login`;
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(credentials),
+        });
+        const data = await handleResponse(response);
+        return { data }; // To keep consistency with the AdminLoginPage
+    } catch (error) {
+        console.error('Login failed:', error);
+        throw error;
+    }
+};
+
+
+// --- Admin Functions ---
+
+const getAuthHeaders = () => {
+    const token = localStorage.getItem('token');
+    return {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+    };
+};
+
+export const getProducts = async () => {
+    const url = `${API_BASE_URL}/products`;
+    // This is a public route, but we use it in admin context too
+    return fetch(url).then(handleResponse);
+};
+
+export const createProduct = async (productData) => {
+    const url = `${API_BASE_URL}/products`;
+    return fetch(url, {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify(productData),
+    }).then(handleResponse);
+};
+
+export const deleteProduct = async (id) => {
+    const url = `${API_BASE_URL}/products/${id}`;
+    return fetch(url, {
+        method: 'DELETE',
+        headers: getAuthHeaders(),
+    }).then(handleResponse);
+};
+
+export const getOrders = async () => {
+    const url = `${API_BASE_URL}/admin/orders`;
+    return fetch(url, { headers: getAuthHeaders() }).then(handleResponse);
+};
+
+export const createBlogPost = async (postData) => {
+    const url = `${API_BASE_URL}/admin/blog`;
+    return fetch(url, {
+        method: 'POST',
+        headers: getAuthHeaders(),
+        body: JSON.stringify(postData),
+    }).then(handleResponse);
+};
+
 /**
  * Fetches all published blog posts.
  * @returns {Promise<object>} - The API response containing the blog posts.

@@ -53,6 +53,7 @@ const blogRoutes = require('./routes/blog');
 const contactRoutes = require('./routes/contact');
 const paymentRoutes = require('./routes/payments');
 const authRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin');
 
 // Mount routers
 app.use('/api/auth', authRoutes);
@@ -61,6 +62,7 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/payments', paymentRoutes);
 app.use('/api/blog', blogRoutes);
 app.use('/api/contact', contactRoutes);
+app.use('/api/admin', adminRoutes);
 
 // Root endpoint to check if the server is running
 app.get('/api', (req, res) => {

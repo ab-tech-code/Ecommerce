@@ -83,8 +83,8 @@ const ProductDetailPage = () => {
         <div className="product-info">
           <h1 className="product-title">{product.name}</h1>
           <div className="product-price">
-            {isOnSale && <span className="original-price">${product.price.toFixed(2)}</span>}
-            <span className="display-price">${displayPrice.toFixed(2)}</span>
+            {isOnSale && <span className="original-price">₦{product.price.toFixed(2)}</span>}
+            <span className="display-price">₦{displayPrice.toFixed(2)}</span>
           </div>
           <p className="product-description">{product.description}</p>
 
@@ -97,6 +97,11 @@ const ProductDetailPage = () => {
             <Button onClick={handleAddToCart} disabled={product.stock === 0}>
               {product.stock > 0 ? 'Add to Cart' : 'Out of Stock'}
             </Button>
+            {product.whatsappLink && (
+              <a href={product.whatsappLink} target="_blank" rel="noopener noreferrer" className="whatsapp-button">
+                Order via WhatsApp
+              </a>
+            )}
           </div>
           <p className="stock-info">
             {product.stock > 0 ? `${product.stock} in stock` : 'Currently unavailable'}
