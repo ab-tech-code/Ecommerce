@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="footer-main">
           {/* --- About Section --- */}
           <div className="footer-section about">
-            <h4 className="footer-logo">GardenVerde</h4>
+            <h4 className="footer-logo">Albustan</h4>
             <p>Bringing nature closer to you, one plant at a time. High-quality plants, furniture, and garden accessories.</p>
           </div>
 
@@ -43,6 +43,7 @@ const Footer = () => {
               <li><Link to="/shipping">Shipping & Returns</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms">Terms of Service</Link></li>
+              <li><Link to="/admin">Admin</Link></li>
             </ul>
           </div>
 
@@ -59,7 +60,7 @@ const Footer = () => {
 
         {/* --- Copyright --- */}
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} GardenVerde. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Albustan. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

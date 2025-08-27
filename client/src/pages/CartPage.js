@@ -12,7 +12,7 @@ const CartPage = () => {
     return (
       <div className="container cart-empty">
         <Helmet>
-            <title>Your Shopping Cart is Empty | GardenVerde</title>
+            <title>Your Shopping Cart is Empty | Albustan</title>
         </Helmet>
         <h1>Your Cart is Empty</h1>
         <p>Looks like you haven't added anything to your cart yet.</p>
@@ -26,7 +26,7 @@ const CartPage = () => {
   return (
     <div className="container cart-page">
       <Helmet>
-        <title>Shopping Cart | GardenVerde</title>
+        <title>Shopping Cart | Albustan</title>
       </Helmet>
       <h1>Your Shopping Cart</h1>
       <div className="cart-layout">
@@ -36,7 +36,7 @@ const CartPage = () => {
               <img src={item.images[0]} alt={item.name} className="cart-item-image" />
               <div className="cart-item-details">
                 <Link to={`/products/${item.slug}`} className="item-name">{item.name}</Link>
-                <p className="item-price">${(item.salePrice || item.price).toFixed(2)}</p>
+                <p className="item-price">₦{(item.salePrice || item.price).toFixed(2)}</p>
                 <div className="item-actions">
                   <div className="quantity-selector">
                     <button onClick={() => updateQuantity(item._id, item.quantity - 1)}>-</button>
@@ -47,7 +47,7 @@ const CartPage = () => {
                 </div>
               </div>
               <div className="cart-item-subtotal">
-                ${((item.salePrice || item.price) * item.quantity).toFixed(2)}
+                ₦{((item.salePrice || item.price) * item.quantity).toFixed(2)}
               </div>
             </div>
           ))}
@@ -57,15 +57,15 @@ const CartPage = () => {
           <h2>Order Summary</h2>
           <div className="summary-row">
             <span>Subtotal</span>
-            <span>${cartTotal.toFixed(2)}</span>
+            <span>₦{cartTotal.toFixed(2)}</span>
           </div>
           <div className="summary-row">
             <span>Shipping</span>
-            <span>{cartTotal > 100 ? 'Free' : '$10.00'}</span>
+            <span>{cartTotal > 100 ? 'Free' : '₦10.00'}</span>
           </div>
           <div className="summary-row total">
             <span>Total</span>
-            <span>${(cartTotal > 100 ? cartTotal : cartTotal + 10).toFixed(2)}</span>
+            <span>₦{(cartTotal > 100 ? cartTotal : cartTotal + 10).toFixed(2)}</span>
           </div>
           <Link to="/checkout">
             <Button className="checkout-btn">Proceed to Checkout</Button>

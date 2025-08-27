@@ -122,6 +122,24 @@ const sampleBlogPosts = (adminUserId) => [
 
 // --- Seeding Logic ---
 
+const addProduct = (product) => {
+  sampleProducts.push(product);
+};
+
+const editProduct = (sku, updatedProduct) => {
+  const productIndex = sampleProducts.findIndex(p => p.sku === sku);
+  if (productIndex !== -1) {
+    sampleProducts[productIndex] = { ...sampleProducts[productIndex], ...updatedProduct };
+  }
+};
+
+const deleteProduct = (sku) => {
+  const productIndex = sampleProducts.findIndex(p => p.sku === sku);
+  if (productIndex !== -1) {
+    sampleProducts.splice(productIndex, 1);
+  }
+};
+
 const seedDatabase = async () => {
   const MONGODB_URI = process.env.MONGODB_URI;
 

@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className="navbar">
       <div className="container navbar-container">
         <div className="navbar-logo">
-          <Link to="/" onClick={closeMobileMenu}>GardenVerde</Link>
+          <Link to="/" onClick={closeMobileMenu}>Albustan</Link>
         </div>
 
         <nav className={`navbar-links ${isMobileMenuOpen ? 'active' : ''}`}>

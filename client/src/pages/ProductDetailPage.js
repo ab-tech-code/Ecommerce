@@ -60,7 +60,7 @@ const ProductDetailPage = () => {
     return (
         <div className="container">
             <Helmet>
-                <title>Product Not Found | GardenVerde</title>
+                <title>Product Not Found | Albustan</title>
             </Helmet>
             <p>Product not found.</p>
         </div>
@@ -73,7 +73,7 @@ const ProductDetailPage = () => {
   return (
     <div className="container product-detail-page">
       <Helmet>
-        <title>{`${product.name} | GardenVerde`}</title>
+        <title>{`${product.name} | Albustan`}</title>
         <meta name="description" content={product.description.substring(0, 160)} />
       </Helmet>
       <div className="product-detail-layout">
@@ -83,8 +83,8 @@ const ProductDetailPage = () => {
         <div className="product-info">
           <h1 className="product-title">{product.name}</h1>
           <div className="product-price">
-            {isOnSale && <span className="original-price">${product.price.toFixed(2)}</span>}
-            <span className="display-price">${displayPrice.toFixed(2)}</span>
+            {isOnSale && <span className="original-price">₦{product.price.toFixed(2)}</span>}
+            <span className="display-price">₦{displayPrice.toFixed(2)}</span>
           </div>
           <p className="product-description">{product.description}</p>
 
