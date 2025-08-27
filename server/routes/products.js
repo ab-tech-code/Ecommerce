@@ -90,10 +90,18 @@ router.get('/:slug', async (req, res, next) => {
       return next(error);
     }
 
+    // --- WhatsApp Order Link ---
+    // IMPORTANT: Replace with your actual WhatsApp number
+    const yourWhatsAppNumber = 'YOUR_WHATSAPP_NUMBER_HERE'; // e.g., '+2348123456789'
+
+    const message = `Hello, I'm interested in the product: ${product.name}. Price: ₦${product.price}.`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/${yourWhatsAppNumber}?text=${encodedMessage}`;
+
     res.status(200).json({
       status: 'success',
       data: {
-        product,
+        product: { ...product.toObject(), whatsappLink },
       },
     });
   } catch (err) {
