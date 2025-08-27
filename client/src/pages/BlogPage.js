@@ -42,8 +42,8 @@ const BlogPage = () => {
   return (
     <div className="container blog-page">
       <Helmet>
-        <title>Gardening Blog | GardenVerde</title>
-        <meta name="description" content="Read our blog for gardening tips, plant care guides, inspiration, and the latest news from GardenVerde." />
+        <title>Gardening Blog | Albustan</title>
+        <meta name="description" content="Read our blog for gardening tips, plant care guides, inspiration, and the latest news from Albustan." />
       </Helmet>
       <div className="blog-hero">
         <h1>Gardening Tips & Inspiration</h1>

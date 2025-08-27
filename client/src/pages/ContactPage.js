@@ -47,7 +47,7 @@ const ContactPage = () => {
   return (
     <div className="container contact-page">
       <Helmet>
-        <title>Contact Us | GardenVerde</title>
+        <title>Contact Us | Albustan</title>
         <meta name="description" content="Have a question? Send us a message through our contact form or find our business hours and location. We're here to help!" />
       </Helmet>
       <div className="contact-hero">

@@ -21,7 +21,7 @@ const featuredProducts = [
     name: 'Monstera Deliciosa',
     slug: 'monstera-deliciosa',
     category: 'natural',
-    price: 35.00,
+    price: 15000.00,
     images: ['/assets/images/placeholder.jpg'],
   },
   {
@@ -29,8 +29,8 @@ const featuredProducts = [
     name: 'Artificial Olive Tree',
     slug: 'artificial-olive-tree',
     category: 'synthetic',
-    price: 150.00,
-    salePrice: 129.99,
+    price: 45000.00,
+    salePrice: 35000.00,
     images: ['/assets/images/placeholder.jpg'],
   },
   {
@@ -38,7 +38,7 @@ const featuredProducts = [
     name: 'Acacia Wood Patio Set',
     slug: 'acacia-wood-patio-set',
     category: 'furniture',
-    price: 299.99,
+    price: 80000.00,
     images: ['/assets/images/placeholder.jpg'],
   },
   {
@@ -46,7 +46,7 @@ const featuredProducts = [
     name: 'Modern Ceramic Planter',
     slug: 'modern-ceramic-planter',
     category: 'planter',
-    price: 25.00,
+    price: 8000.00,
     images: ['/assets/images/placeholder.jpg'],
   }
 ];
@@ -56,8 +56,8 @@ const HomePage = () => {
   return (
     <div className="homepage">
       <Helmet>
-        <title>GardenVerde - Your Home for Beautiful Plants & Garden Supplies</title>
-        <meta name="description" content="Shop a wide variety of natural and synthetic plants, garden furniture, and planters. Create your own green oasis with GardenVerde." />
+        <title>Albustan - Your Home for Beautiful Plants & Garden Supplies</title>
+        <meta name="description" content="Shop a wide variety of natural and synthetic plants, garden furniture, and planters. Create your own green oasis with Albustan." />
       </Helmet>
       <Hero />
 

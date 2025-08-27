@@ -17,6 +17,7 @@ import CheckoutPage from './pages/CheckoutPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 import BlogPage from './pages/BlogPage';
 import BlogDetailPage from './pages/BlogDetailPage';
+import AdminPage from './pages/AdminPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 /**
@@ -48,6 +49,9 @@ function App() {
             {/* Blog Pages */}
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogDetailPage />} />
+
+            {/* Admin Page */}
+            <Route path="/admin" element={<AdminPage />} />
 
             {/* 404 Not Found Page */}
             <Route path="*" element={<NotFoundPage />} />

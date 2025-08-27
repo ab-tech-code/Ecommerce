@@ -29,8 +29,8 @@ const ServicesPage = () => {
   return (
     <div className="container services-page">
       <Helmet>
-        <title>Our Services | GardenVerde</title>
-        <meta name="description" content="Explore the services offered by GardenVerde, including residential landscaping, office plant curation, maintenance plans, and event rentals." />
+        <title>Our Services | Albustan</title>
+        <meta name="description" content="Explore the services offered by Albustan, including residential landscaping, office plant curation, maintenance plans, and event rentals." />
       </Helmet>
       <div className="services-hero">
         <h1>Our Services</h1>

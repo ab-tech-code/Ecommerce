@@ -5,7 +5,7 @@ const valuePropsData = [
   {
     icon: '🚚',
     title: 'Free Delivery',
-    description: 'On all orders over $100. We deliver to your doorstep, hassle-free.'
+    description: 'On all orders over ₦100. We deliver to your doorstep, hassle-free.'
   },
   {
     icon: '🔄',

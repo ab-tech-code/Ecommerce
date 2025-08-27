@@ -97,7 +97,7 @@ const ProductsPage = () => {
   return (
     <div className="container products-page">
       <Helmet>
-        <title>Shop All Products | GardenVerde</title>
+        <title>Shop All Products | Albustan</title>
         <meta name="description" content="Explore our full collection of natural plants, synthetic plants, garden furniture, and planters. Filter by category, price, and more." />
       </Helmet>
       <h1 className="page-title">Shop Our Collection</h1>

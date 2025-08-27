@@ -77,12 +77,12 @@ const OrderConfirmationPage = () => {
             {order.items.map(item => (
                 <div key={item._id} className="summary-item">
                     <span>{item.name} &times; {item.quantity}</span>
-                    <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    <span>₦{(item.price * item.quantity).toFixed(2)}</span>
                 </div>
             ))}
             <div className="summary-row total">
                 <span>Total</span>
-                <span>${order.totals.total.toFixed(2)}</span>
+                <span>₦{order.totals.total.toFixed(2)}</span>
             </div>
         </div>
 

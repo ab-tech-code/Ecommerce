@@ -31,7 +31,7 @@ const BlogDetailPage = () => {
   if (!post) return (
     <div className="container">
         <Helmet>
-            <title>Post Not Found | GardenVerde</title>
+            <title>Post Not Found | Albustan</title>
         </Helmet>
         Blog post not found.
     </div>
@@ -46,7 +46,7 @@ const BlogDetailPage = () => {
   return (
     <div className="container blog-detail-page">
       <Helmet>
-        <title>{`${post.title} | GardenVerde Blog`}</title>
+        <title>{`${post.title} | Albustan Blog`}</title>
         <meta name="description" content={post.excerpt} />
       </Helmet>
       <article className="blog-post-content">

@@ -72,7 +72,7 @@ const CheckoutPage = () => {
     return (
       <div className="container checkout-empty">
         <Helmet>
-            <title>Checkout | GardenVerde</title>
+            <title>Checkout | Albustan</title>
         </Helmet>
         <h1>Your Cart is Empty</h1>
         <p>You must have items in your cart to proceed to checkout.</p>
@@ -87,8 +87,8 @@ const CheckoutPage = () => {
   return (
     <div className="container checkout-page">
       <Helmet>
-        <title>Checkout | GardenVerde</title>
-        <meta name="description" content="Complete your purchase securely. Enter your shipping and payment details to place your order with GardenVerde." />
+        <title>Checkout | Albustan</title>
+        <meta name="description" content="Complete your purchase securely. Enter your shipping and payment details to place your order with Albustan." />
       </Helmet>
       <h1>Checkout</h1>
       <form onSubmit={handleSubmit} className="checkout-layout">
@@ -111,13 +111,13 @@ const CheckoutPage = () => {
             {cartItems.map(item => (
               <div key={item._id} className="summary-item">
                 <span>{item.name} &times; {item.quantity}</span>
-                <span>${((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
+                <span>₦{((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
               </div>
             ))}
           </div>
-          <div className="summary-row"><span>Subtotal</span><span>${cartTotal.toFixed(2)}</span></div>
-          <div className="summary-row"><span>Shipping</span><span>${shippingCost.toFixed(2)}</span></div>
-          <div className="summary-row total"><span>Total</span><span>${totalAmount.toFixed(2)}</span></div>
+          <div className="summary-row"><span>Subtotal</span><span>₦{cartTotal.toFixed(2)}</span></div>
+          <div className="summary-row"><span>Shipping</span><span>₦{shippingCost.toFixed(2)}</span></div>
+          <div className="summary-row total"><span>Total</span><span>₦{totalAmount.toFixed(2)}</span></div>
 
           <div className="payment-method">
             <h3>Payment Method</h3>

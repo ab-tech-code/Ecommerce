@@ -6,8 +6,8 @@ const AboutPage = () => {
   return (
     <div className="container about-page">
       <Helmet>
-        <title>About Us | GardenVerde</title>
-        <meta name="description" content="Learn about GardenVerde's story, our passion for plants, and our commitment to sustainability." />
+        <title>About Us | Albustan</title>
+        <meta name="description" content="Learn about Albustan's story, our passion for plants, and our commitment to sustainability." />
       </Helmet>
       <div className="about-hero">
         <h1>Our Story</h1>
@@ -18,7 +18,7 @@ const AboutPage = () => {
         <div className="content-section">
           <h2>Rooted in Passion</h2>
           <p>
-            GardenVerde was founded in 2020 with a simple mission: to make the joy of gardening accessible to everyone, everywhere. We believe that a little bit of green can make a big difference in our lives, bringing peace, beauty, and a connection to nature into our homes and workspaces.
+            Albustan was founded in 2020 with a simple mission: to make the joy of gardening accessible to everyone, everywhere. We believe that a little bit of green can make a big difference in our lives, bringing peace, beauty, and a connection to nature into our homes and workspaces.
           </p>
           <p>
             Our team is composed of horticulturalists, designers, and plant enthusiasts who carefully select and nurture every plant we sell. We are committed to providing you with the healthiest, highest-quality plants, along with the knowledge and support you need to help them thrive.

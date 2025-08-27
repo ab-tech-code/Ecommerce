@@ -34,8 +34,8 @@ const ProductCard = ({ product }) => {
         <p className="product-category">{category}</p>
         <h3 className="product-name">{name}</h3>
         <div className="product-price">
-          {isOnSale && <span className="original-price">${price.toFixed(2)}</span>}
-          <span className="display-price">${displayPrice.toFixed(2)}</span>
+          {isOnSale && <span className="original-price">₦{price.toFixed(2)}</span>}
+          <span className="display-price">₦{displayPrice.toFixed(2)}</span>
         </div>
       </div>
       <button onClick={handleAddToCart} className="add-to-cart-btn">
