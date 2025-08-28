@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 require('dotenv').config();
 
 const MONGODB_URI = process.env.MONGODB_URI;
-const ADMIN_EMAIL = 'Admin@Albustan';
-const ADMIN_PASSWORD = 'AdminPassword123!'; // It's recommended to change this
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const ADMIN_NAME = process.env.ADMIN_NAME || 'Admin';
 
 const seedAdmin = async () => {
   try {
@@ -23,15 +23,11 @@ const seedAdmin = async () => {
       return;
     }
 
-    // Hash the password
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(ADMIN_PASSWORD, salt);
-
-    // Create a new admin user
+    // Create a new admin user (password will be hashed by pre-save hook)
     const adminUser = new User({
-      name: 'Admin',
+      name: ADMIN_NAME,
       email: ADMIN_EMAIL,
-      hashedPassword: hashedPassword,
+      hashedPassword: ADMIN_PASSWORD, // pass plain text, hook will hash it
       role: 'admin',
     });
 
