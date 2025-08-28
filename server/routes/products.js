@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
 const { protect, admin } = require('../middleware/auth');
+const slugify = require('slugify');
+const { v4: uuidv4 } = require('uuid');
 
 /**
  * @route   GET /api/products
@@ -119,7 +121,28 @@ router.get('/:slug', async (req, res, next) => {
  */
 router.post('/', protect, admin, async (req, res, next) => {
     try {
-        const newProduct = await Product.create(req.body);
+        const { name, description, price, stock, images, category } = req.body;
+
+        // Generate slug
+        const slug = slugify(name, { lower: true, strict: true });
+
+        // Generate SKU
+        const sku = `PROD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+
+        // Set default category if not provided
+        const productCategory = category || 'natural';
+
+        const newProduct = await Product.create({
+            name,
+            slug,
+            sku,
+            description,
+            price,
+            stock,
+            images,
+            category: productCategory,
+        });
+
         res.status(201).json({
             status: 'success',
             data: {

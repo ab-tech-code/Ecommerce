@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Order = require('../models/Order');
 const Product = require('../models/Product');
-// const authMiddleware = require('../middleware/auth'); // To be added later
+const { protect, admin } = require('../middleware/auth');
 
 /**
  * @route   POST /api/orders
@@ -76,7 +76,12 @@ router.post('/', async (req, res, next) => {
 
     const savedOrder = await newOrder.save();
 
-    // TODO: Decrement product stock (can be done here or after payment confirmation)
+    // Decrement product stock
+    for (const item of savedOrder.items) {
+        await Product.findByIdAndUpdate(item.product, {
+            $inc: { stock: -item.quantity },
+        });
+    }
 
     res.status(201).json({
       status: 'success',
@@ -127,5 +132,23 @@ router.get('/:id', async (req, res, next) => {
  */
 // router.get('/user/:userId', authMiddleware, async (req, res, next) => { ... });
 
+/**
+ * @route   GET /api/orders/admin/all
+ * @desc    Get all orders (admin only)
+ * @access  Private/Admin
+ */
+router.get('/admin/all', protect, admin, async (req, res, next) => {
+    try {
+        const orders = await Order.find({}).populate('user', 'name email').populate('items.product');
+        res.status(200).json({
+            status: 'success',
+            data: {
+                orders,
+            },
+        });
+    } catch (err) {
+        next(err);
+    }
+});
 
 module.exports = router;

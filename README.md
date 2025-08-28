@@ -113,6 +113,41 @@ Navigate to `http://localhost:3000/admin/login` to access the admin login page.
 
 **Note**: It is highly recommended to change this password in a production environment.
 
+### Recent Changes and How to Test Them
+
+The following changes have been made to the application:
+
+*   **Backend:**
+    *   The `slug` and `sku` for new products are now automatically generated.
+    *   A default category ("natural") is assigned to new products if no category is specified.
+    *   The currency has been changed to Naira (NGN).
+    *   An endpoint has been added for admins to view all orders.
+    *   The stock is now decremented when an order is placed.
+*   **Frontend:**
+    *   The product creation form now includes a dropdown to select a category.
+    *   The admin dashboard now has a page to view all orders.
+    *   The checkout page now displays prices in Naira (NGN).
+
+To test these changes, please follow these steps:
+
+1.  **Create a new product:**
+    *   Log in to the admin dashboard.
+    *   Navigate to the "Manage Products" page.
+    *   Fill out the form to create a new product. You should not see fields for `slug` and `sku`.
+    *   Select a category from the dropdown menu.
+    *   After creating the product, verify that it appears in the list of existing products.
+2.  **Place an order:**
+    *   Go to the storefront and add some products to your cart.
+    *   Proceed to the checkout page.
+    *   Verify that the prices are displayed in Naira (NGN).
+    *   Fill out the shipping information and select "Cash on Delivery" as the payment method.
+    *   Place the order.
+3.  **Verify the order:**
+    *   Log in to the admin dashboard.
+    *   Navigate to the "Manage Orders" page.
+    *   Verify that the order you just placed appears in the list of orders.
+    *   Verify that the stock of the products you ordered has been decremented.
+
 ### Using the Dashboard
 
 Once logged in, you will be redirected to the admin dashboard, where you can:
