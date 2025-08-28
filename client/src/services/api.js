@@ -146,6 +146,11 @@ export const getOrders = async () => {
     return fetch(url, { headers: getAuthHeaders() }).then(handleResponse);
 };
 
+export const getAllOrders = async () => {
+    const url = `${API_BASE_URL}/orders/admin/all`;
+    return fetch(url, { headers: getAuthHeaders() }).then(handleResponse);
+};
+
 export const createBlogPost = async (postData) => {
     const url = `${API_BASE_URL}/admin/blog`;
     return fetch(url, {

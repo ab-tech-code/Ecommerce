@@ -9,6 +9,7 @@ const ProductManagementPage = () => {
         price: '',
         stock: '',
         image: '',
+        category: 'natural',
     });
 
     useEffect(() => {
@@ -58,6 +59,12 @@ const ProductManagementPage = () => {
                 <textarea name="description" value={formData.description} onChange={handleChange} placeholder="Description" required />
                 <input type="number" name="price" value={formData.price} onChange={handleChange} placeholder="Price" required />
                 <input type="number" name="stock" value={formData.stock} onChange={handleChange} placeholder="Stock" required />
+                <select name="category" value={formData.category} onChange={handleChange}>
+                    <option value="natural">Natural</option>
+                    <option value="synthetic">Synthetic</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="planter">Planter</option>
+                </select>
                 <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder="Image URL" required />
                 <button type="submit">Add Product</button>
             </form>

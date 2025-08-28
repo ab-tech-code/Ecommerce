@@ -19,7 +19,7 @@ const CheckoutPage = () => {
     city: '',
     state: '',
     postalCode: '',
-    country: 'United States',
+    country: 'Nigeria',
     phoneNumber: '',
   });
 
@@ -111,13 +111,13 @@ const CheckoutPage = () => {
             {cartItems.map(item => (
               <div key={item._id} className="summary-item">
                 <span>{item.name} &times; {item.quantity}</span>
-                <span>${((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
+                <span>₦{((item.salePrice || item.price) * item.quantity).toFixed(2)}</span>
               </div>
             ))}
           </div>
-          <div className="summary-row"><span>Subtotal</span><span>${cartTotal.toFixed(2)}</span></div>
-          <div className="summary-row"><span>Shipping</span><span>${shippingCost.toFixed(2)}</span></div>
-          <div className="summary-row total"><span>Total</span><span>${totalAmount.toFixed(2)}</span></div>
+          <div className="summary-row"><span>Subtotal</span><span>₦{cartTotal.toFixed(2)}</span></div>
+          <div className="summary-row"><span>Shipping</span><span>₦{shippingCost.toFixed(2)}</span></div>
+          <div className="summary-row total"><span>Total</span><span>₦{totalAmount.toFixed(2)}</span></div>
 
           <div className="payment-method">
             <h3>Payment Method</h3>
