@@ -146,11 +146,10 @@ const seedDatabase = async () => {
     // Create a sample admin user
     console.log('Creating admin user...');
     const adminUser = await User.create({
-        name: 'Admin User',
-        email: 'admin@example.com',
-        // In a real app, never store plain text passwords.
-        // The pre-save hook in the User model will hash this.
-        hashedPassword: 'password123',
+        name: process.env.ADMIN_NAME || 'Admin User',
+        email: process.env.ADMIN_EMAIL,
+        // The User model pre-save hook should hash this password
+        hashedPassword: process.env.ADMIN_PASSWORD,
         role: 'admin',
     });
     console.log('Admin user created.');
